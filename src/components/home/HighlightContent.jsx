@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef, useEffect } from 'react'
-import GlowBlob from './GlowBlob';
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -57,7 +56,6 @@ const HighlightContent = () => {
 
   return (
     <div ref={contentRef} id="highlight-content" className="flex-1 p-4 flex flex-col justify-center items-end">
-        <GlowBlob />
         <span ref={engineerRef} data-value="ENGINEER." className="mb-2 text-7xl">ENGINEER.</span>
         <span ref={developerRef} data-value="DEVELOPER." className="mb-2 mt-2 text-7xl">DEVELOPER.</span>
         <span ref={coderRef} data-value="CODER." className="mt-2 text-7xl">CODER.</span>

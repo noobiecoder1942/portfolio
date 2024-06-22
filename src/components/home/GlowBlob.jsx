@@ -5,26 +5,33 @@ const GlowBlob = () => {
 
   useEffect(() => {
     const handlePointerMove = (event) => {
-      const { clientX, clientY } = event;
-      
-      if (blobRef.current) {
-        blobRef.current.animate({
-          left: `${clientX}px`,
-          top: `${clientY}px`
-        }, { duration: 3000, fill: 'forwards' });
-      }
+        const { clientX, clientY } = event;
+        const blobWidth = blobRef.current.offsetWidth;
+        const blobHeight = blobRef.current.offsetHeight;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+  
+        // Calculate adjusted positions to keep blob within viewport
+        let adjustedX = clientX;
+        let adjustedY = clientY;
+  
+        if (clientX + blobWidth / 2 > windowWidth) {
+          adjustedX = windowWidth - blobWidth / 2;
+        }
+        if (clientY + blobHeight / 2 > windowHeight) {
+          adjustedY = windowHeight - blobHeight / 2;
+        }
+  
+        if (blobRef.current) {
+          blobRef.current.style.left = `${adjustedX}px`;
+          blobRef.current.style.top = `${adjustedY}px`;
+        }
     };
 
-    const contentElement = document.getElementById('highlight-content');
-
-    if (contentElement) {
-        contentElement.addEventListener('pointermove', handlePointerMove);
-    }
+    document.addEventListener('pointermove', handlePointerMove);
 
     return () => {
-      if (contentElement) {
-        contentElement.removeEventListener('pointermove', handlePointerMove);
-      }
+        document.removeEventListener('pointermove', handlePointerMove);
     };
   }, []);
 
@@ -32,19 +39,20 @@ const GlowBlob = () => {
     <div
       ref={blobRef}
       style={{
-        position: 'absolute',
+        position: 'fixed',
         aspectRatio: '1',
         left: '50%',
         top: '50%',
-        height: '34vmax',
+        height: '25vmax',
         backgroundColor: 'white',
-        background: 'linear-gradient(to right, aquamarine, mediumpurple)',
+        background: 'linear-gradient(to right, green, blue)',
         animation: 'rotate(20s, infinite)',
         borderRadius: '50%',
-        // pointerEvents: 'none',
+        pointerEvents: 'none',
         aspectRatio: '1',
         mixBlendMode: 'screen',
         transform: 'translate(-50%, -50%)',
+        filter: 'blur(10vmax)',
       }}
     ></div>
   );
