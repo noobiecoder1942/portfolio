@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="flex flex-1 items-center justify-end h-full">
         <HighlightContent />
       </div>
-      <div className="bg-dark dark:bg-light w-1"></div>
+      <div className="bg-dark dark:bg-light w-[1px] h-full"></div>
       <div className="flex flex-1 items-center h-full">
         <SecondaryContent />
       </div>
