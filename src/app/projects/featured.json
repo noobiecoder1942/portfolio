@@ -1,0 +1,34 @@
+[
+	{
+		"project": "abhirag.dev",
+		"url": "https://abhirag.dev/",
+		"repo": "Public",
+		"descriptionTitle": "My Portfolio Website",
+		"description": "Built With ReactJS and NextJS.",
+		"stack": [
+			{"key": "reactJS"},
+			{"key": "nextJS"},
+			{"key": "javascript"},
+			{"key": "framermotion"},
+			{"key": "html5"},
+			{"key": "css3"},
+			{"key": "sass"},
+			{"key": "git"}
+		]
+	},
+	{
+		"project": "blog.abhirag.dev",
+		"url": "https://blog.abhirag.dev/",
+		"repo": "Public",
+		"descriptionTitle": "My Blogging Website.",
+		"description": "A static markdown-based blog built with Hugo using the PaperMod theme.",
+		"stack": [
+			{"key": "javascript"},
+			{"key": "html5"},
+			{"key": "css3"},
+			{"key": "sass"},
+			{"key": "git"},
+			{"key": "hugo"}
+		]
+	}
+]
