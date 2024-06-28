@@ -1,7 +1,8 @@
 [
 	{
 		"project": "abhirag.dev",
-		"url": "https://abhirag.dev/",
+		"liveurl": "https://abhirag.dev/",
+		"githuburl": "https://github.com/noobiecoder1942/portfolio",
 		"repo": "Public",
 		"descriptionTitle": "My Portfolio Website",
 		"description": "Built With ReactJS and NextJS.",
@@ -18,7 +19,8 @@
 	},
 	{
 		"project": "blog.abhirag.dev",
-		"url": "https://blog.abhirag.dev/",
+		"liveurl": "https://blog.abhirag.dev/",
+		"githuburl": "https://github.com/noobiecoder1942/blog",
 		"repo": "Public",
 		"descriptionTitle": "My Blogging Website.",
 		"description": "A static markdown-based blog built with Hugo using the PaperMod theme.",

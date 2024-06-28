@@ -1,7 +1,7 @@
 import React from 'react'
 import projects from "./featured.json";
 import "./projects.css"
-
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { SiJavascript, SiHtml5, SiCss3, SiSass, SiGithub, SiHugo, SiFramer, SiReact, SiNextdotjs} from "react-icons/si";
 
 // Mapping of keys to corresponding react-icons components
@@ -23,11 +23,19 @@ const FeaturedProjects = ( ) => {
         <div className="project-list">
           {projects.map((project, index) => (
             <div key={index} className="project-card">
-              <h2>{project.project}</h2>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                {project.url}
-              </a>
-              <p>{project.repo}</p>
+              <div className='top-bar'>
+                <div>{project.project}</div>
+                <div className='space-x-1'>
+                  <a href={project.githuburl} target="_blank" rel="noopener noreferrer" className='outside-link'>
+                    <SiGithub /> 
+                    {project.repo}
+                  </a>
+                  <a href={project.liveurl} target="_blank" rel="noopener noreferrer" className='outside-link'>
+                  <FaExternalLinkAlt /> 
+                    Demo
+                  </a>
+                </div>
+              </div>
               <h3>{project.descriptionTitle}</h3>
               <p>{project.description}</p>
               <div className="stack">
