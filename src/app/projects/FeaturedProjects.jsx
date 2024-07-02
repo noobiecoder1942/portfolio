@@ -20,7 +20,7 @@ const iconMapping = {
 const FeaturedProjects = ( ) => {
 
     return (
-        <div className="project-list">
+        <div className="project-list text-2xl">
           {projects.map((project, index) => (
             <div key={index} className="project-card">
               <div className='top-bar'>
@@ -36,8 +36,8 @@ const FeaturedProjects = ( ) => {
                   </a>
                 </div>
               </div>
-              <h3>{project.descriptionTitle}</h3>
-              <p>{project.description}</p>
+              <h3 className='mt-10'>{project.descriptionTitle}</h3>
+              <p className='mt-5'>{project.description}</p>
               <div className="stack">
                 {project.stack.map((tech, techIndex) => {
                   const IconComponent = iconMapping[tech.key];
